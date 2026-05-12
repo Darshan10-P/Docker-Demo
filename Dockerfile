@@ -1,7 +1,4 @@
-FROM python:3.12
-WORKDIR /app
+FROM ubuntu:latest
 RUN apt update && apt install -y nginx
-COPY main.py .
 EXPOSE 80
-ENTRYPOINT ["python "]
-CMD [main.py]
+CMD ["nginx", "-g","daemon off"]
